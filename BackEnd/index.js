@@ -1,5 +1,5 @@
 const express = require('express') // nodejs framework
-const { connectDatabase, getDatabase, closeDatabase, insertUser } = require('./database.js');
+const { connectDatabase, insertUser } = require('./database.js');
 
 const app = express();
 const port = 8080;
