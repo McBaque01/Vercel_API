@@ -1,4 +1,4 @@
-import express from "express"; // nodejs framework
+const express = require('express') // nodejs framework
 
 const app = express();
 const port = 8080;
@@ -24,4 +24,4 @@ app.listen(port, () => {
 console.log(`Server is running on ${port}`);
 });
 
-export default app;
+module.exports = app;
