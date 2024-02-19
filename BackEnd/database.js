@@ -74,7 +74,6 @@ async function connectDatabase() {
         throw error; // Propagate the error to the caller
     }
 }
-
 function getDatabase() {
     if (!db) {
         throw new Error('Database is not connected');
