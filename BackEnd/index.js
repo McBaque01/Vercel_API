@@ -1,5 +1,6 @@
-const express = require('express') // nodejs framework
-const { connectDatabase, insertUser } = require('./database.js');
+// const express = require('express') // nodejs framework
+import express from 'express'
+import { connectDB, insertUser } from './database.js';
 
 const app = express();
 const port = 8080;
@@ -7,7 +8,7 @@ app.use(express.json());
 
 const MongoDB_URI = "mongodb+srv://vercel-admin-user:hBojOvCZeapjKL4j@cluster0.npib522.mongodb.net/?retryWrites=true&w=majority";
 
-connectDatabase(MongoDB_URI);
+await connectDB(MongoDB_URI);
 
 app.post('/signup', async (req, res) => {
     console.log("VERCEL API");
@@ -27,4 +28,4 @@ app.listen(port, () => {
     console.log(`Server is running on ${port}`);
 });
 
-module.exports = app;
+export default app;
